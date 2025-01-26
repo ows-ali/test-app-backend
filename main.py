@@ -25,11 +25,4 @@ async def get_data():
     print('sdf',data)
     return data.to_dict(orient="records")
 
-@app.get("/data/filtered")
-async def get_filtered_data(column: str, value: str):
-    if column not in data.columns:
-        raise HTTPException(status_code=400, detail="Invalid column name")
-    filtered_data = data[data[column] == value]
-    return filtered_data.to_dict(orient="records")
-
 
