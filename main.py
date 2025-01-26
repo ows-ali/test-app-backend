@@ -22,7 +22,6 @@ except Exception as e:
 
 @app.get("/data")
 async def get_data():
-    print('sdf',data)
     return data.to_dict(orient="records")
 
 
